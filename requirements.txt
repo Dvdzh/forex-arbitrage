@@ -1,0 +1,16 @@
+matplotlib
+networkx 
+streamlit
+pandas
+numpy==1.26.4
+networkx
+matplotlib
+requests
+plotly
+scikit-learn
+tqdm
+seaborn
+yfinance
+
+simulated-bifurcation
+torch
