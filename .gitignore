@@ -67,3 +67,9 @@ venv.bak/
 # Logs
 logs/
 *.log
+
+
+# Data files
+*.csv
+*.json
+.DS_Store
