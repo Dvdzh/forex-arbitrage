@@ -70,6 +70,6 @@ logs/
 
 
 # Data files
-*.csv
-*.json
+data/problem
+data/solver
 .DS_Store

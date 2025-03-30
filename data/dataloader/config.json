@@ -1,0 +1,11 @@
+{
+    "list_currency": [
+        "USD",
+        "EUR",
+        "JPY",
+        "CHF"
+    ],
+    "period": "1d",
+    "interval": "1m",
+    "source": "yahooFinance"
+}
