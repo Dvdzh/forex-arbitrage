@@ -68,8 +68,4 @@ venv.bak/
 logs/
 *.log
 
-
-# Data files
-data/problem
-data/solver
 .DS_Store
