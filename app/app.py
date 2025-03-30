@@ -12,8 +12,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ### ------------------- Read data ------------------- ###
 # Lecture des données
 prices_df = pd.read_csv("data/dataloader/prices_temporal.csv", index_col=0, header=0)
-q_df = pd.read_csv("/Users/davidzhu/Local/forex-arbitrage/data/problem/Q_2025-03-28 00:00:00+00:00.csv", index_col=0, header=0)
-with open("/Users/davidzhu/Local/forex-arbitrage/data/dataloader/list_currency.json", "r") as f:
+q_df = pd.read_csv("data/problem/Q_2025-03-28 00:00:00+00:00.csv", index_col=0, header=0)
+with open("data/dataloader/list_currency.json", "r") as f:
     list_currency = json.load(f)
 
 # Set page configuration
