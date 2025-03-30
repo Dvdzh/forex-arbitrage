@@ -133,13 +133,15 @@ st.write("### Solution")
 
 tab1, tab2, tab3 = st.tabs(["Simulated Bifurcation (local)", "Gurobi Solver", "D-Wave Solver"])
 with tab1:
-
     date_list = [date[3:-4] for date in os.listdir('data/solver/')]
     # sol_date = st.selectbox('Select Date', date_list, index=0)
     sol = pd.read_csv(f"data/solver/sb_{date_selection}.csv", index_col=0, header=0)
     sol.sort_values(by="coef", ascending=False, inplace=True)
     st.dataframe(sol)
-
+with tab2:
+    st.write("Not implemented yet")
+with tab3:
+    st.write("Not implemented yet")
 # st.toast('Mr Stay-Puft')
 # st.error('Error message')
 # st.warning('Warning message')
