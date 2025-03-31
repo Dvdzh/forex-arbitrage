@@ -1,8 +1,19 @@
 import sys
 import os
 import streamlit as st 
+from st_link_analysis import st_link_analysis, NodeStyle, EdgeStyle
 import pandas as pd 
 import json 
+
+# Style node & edge groups
+NODE_STYLE = [
+    NodeStyle("CURRENCY", "#FF7F3E", "name"),
+]
+
+EDGE_STYLE = [
+    EdgeStyle("PAIR_DIRECT", directed=True, color="#83B256", caption="rate"),
+    EdgeStyle("PAIR_INVERSE", directed=True, color="#B29D56", caption="rate"),
+]
 
 # st.metric(label="Temp", value="273 K", delta="1.2 K")
 
@@ -36,6 +47,13 @@ with st.sidebar:
     st.info("Projet IND8123 Fintech, 2025")
     st.info("Acquisition de données, modélisation et résolution de problèmes d'arbitrage sur le marché des changes en utilsant différents solveurs disponibles.")
 
+    st.divider()
+    st.subheader('Calcul de la complexité')
+    st.write("Le problème d'arbitrage sur le marché des changes est un problème NP-complet, ce qui signifie que le temps de calcul augmente exponentiellement avec le nombre de devises.")
+    d = st.number_input("Nombre de devise", 0, 10, 2)
+    st.write(f"Nombre de pairs de devise : {d*(d-1)}")
+    st.write(f"Nombre de possibilités de combinaison : {2**(d*(d-1)):,}")
+    st.write()
 ### ------------------- Dataloader ------------------- ###
 # st.divider()
 st.write("### Acquisition des données")
@@ -45,14 +63,28 @@ with st.expander("Configurations utilisé pour l'acquisition des données"):
         config = json.load(f)
     st.write(config)
 
-st.dataframe(prices_df)
-st.caption('Remarque : Les données sont disponibles toutes les 6 minutes, on peut expliquer ces trous parce qu\'on exclu les données manquantes.')
 
 date_list = prices_df.index
-with st.sidebar:
-    st.divider()
-    st.subheader("Paramètres")
-    date_selection = st.selectbox('Choix de la date pour la formulation', date_list, index=len(date_list)-1)
+# with st.sidebar:
+#     st.divider()
+#     st.subheader("Paramètres")
+#     date_selection = st.selectbox('Choix de la date pour la formulation', date_list, index=len(date_list)-1)
+
+col1, col2 = st.columns(2)
+with col1:
+    event = st.dataframe(prices_df, on_select="rerun", selection_mode="single-row")
+    if event['selection']['rows'] == []:
+        date_selection = prices_df.index[-1]
+    else:
+        date_selection = prices_df.index[event['selection']['rows'][0]]
+    # print(date_selection)
+    st.caption('Remarque : Les données sont disponibles toutes les 6 minutes, on peut expliquer ces trous parce qu\'on exclu les données manquantes.')
+    st.caption('Remarque : Cliquer sur la colonne à gauche pour changer la date.')
+# Render the component
+with col2:
+    with open(f"data/figure/graph_{date_selection}.json", "r") as f:
+        elements = json.load(f)
+    st_link_analysis(elements, "cose", NODE_STYLE, EDGE_STYLE)
 ### ------------------- Problem formulation ------------------- ###
 
 st.divider()
@@ -75,11 +107,11 @@ with st.expander("Voir explications"):
             \argmin_{\textbf{b} \in \{0,1\} ^{D(D-1)}} - \textbf{b}^T \log(\textbf{R}) \textbf{b}
                 ''')
     st.write("3. **Contraintes** ")
+    st.caption("   Pour chaque paire de devise, on définit la source et la destination tel que la source est la devise de départ et la destination est la devise d'arrivée")
     st.write("   - On pénalise les solutions ayant sélectionné le plus de paires de devises")
     st.latex(r'''
             \argmin_{\textbf{b} \in \{0,1\} ^{D(D-1)}} m \times \textbf{b}^T I_{D(D-1)} \textbf{b}
             ''')
-    st.caption("   - Pour chaque paire de devise, on définit la source et la destination tel que la source est la devise de départ et la destination est la devise d'arrivée")
     st.write("   - Pour une paire de devise choisie, on pénalise les paires de devises ayant la même source et favorise les paires de devises dont la destination est la source")
     st.latex(r'''
             \argmin_{\textbf{b} \in \{0,1\} ^{D(D-1)}} m_1 \times \textbf{b}^T \textbf{M}_1\textbf{b} 
@@ -124,6 +156,27 @@ import src.problem as problem
 qubo = problem.QUBOProblem()
 qubo.get_Q(prices_df.loc[date_selection], constraint_M1=constraint_M1, constraint_M2=constraint_M2, constraint_diag=constraint_diag)
 st.dataframe(qubo.Q)
+
+# import plotly.graph_objects as go
+
+# fig = go.Figure()
+
+# fig.add_trace(
+#     go.Heatmap(
+#         z=qubo.Q.values,
+#         x=qubo.Q.columns,
+#         y=qubo.Q.index,
+#         colorscale="Viridis",
+#         text=qubo.Q.values,
+#         hovertemplate="<b>%{x}</b> <br> %{y} <br> Coefficient: %{z:.2f}<extra></extra>",
+#     )
+# )
+
+# fig.update_layout(
+#     height=600,
+# )
+
+# st.plotly_chart(fig)
 # st.markdown("Exemple de formulation matricielle")
 # st.dataframe(q_df)
 ### ------------------- Display Solution ------------------- ###
@@ -137,13 +190,40 @@ with tab1:
     # sol_date = st.selectbox('Select Date', date_list, index=0)
     sol = pd.read_csv(f"data/solver/sb_{date_selection}.csv", index_col=0, header=0)
     sol.sort_values(by="coef", ascending=False, inplace=True)
-    st.dataframe(sol)
+    event = st.dataframe(sol, on_select="rerun", selection_mode="single-row")
+    if event['selection']['rows'] == []:
+        # paths = sol.loc[sol.index[0], "paths"]
+        paths = sol["paths"].iloc[0].\
+                    removeprefix("[").removesuffix("]")\
+                    .replace("'", "").replace('"', "").replace(' ', "")\
+                    .split(",") # remove the brackets
+    else:
+        paths = sol["paths"].iloc[event['selection']['rows'][0]].\
+                    removeprefix("[").removesuffix("]")\
+                    .replace("'", "").replace('"', "").replace(' ', "")\
+                    .split(",") # remove the brackets
+    
+    print("PATHS", paths, "\n")
+
+    nodes_ = set([path[:3] for path in paths])
+    print("NODES_", nodes_, "\n")
+
+    elements_ = {}
+    # print("NODES", elements["nodes"], "\n")
+    # print("EDGES", elements["edges"], "\n")
+
+    elements_["nodes"] = [node for node in elements["nodes"] if node["data"]["id"] in nodes_]
+    elements_["edges"] = [edge for edge in elements["edges"] if edge["data"]["id"] in paths]
+
+    # print("NODES", elements_["nodes"], "\n")
+    # print("EDGES", elements_["edges"], "\n")
+
+    st_link_analysis(elements_, "cose", NODE_STYLE, EDGE_STYLE, key="sb")
+
 with tab2:
     st.write("Not implemented yet")
 with tab3:
     st.write("Not implemented yet")
-# st.toast('Mr Stay-Puft')
-# st.error('Error message')
-# st.warning('Warning message')
-# st.info('Info message')
-# st.success('Success message')
+
+
+
