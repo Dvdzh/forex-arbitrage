@@ -16,3 +16,4 @@ simulated-bifurcation
 torch
 
 bellmanford
+st-link-analysis
