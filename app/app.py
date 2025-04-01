@@ -122,18 +122,19 @@ with st.expander("Voir explications"):
             \argmin_{\textbf{b} \in \{0,1\} ^{D(D-1)}} m_2 \times \textbf{b}^T \textbf{M}_2 \textbf{b} 
             ''')
     
-    st.write("4. **Formulation finale** :")
-    st.latex(r'''
-            \argmin_{\textbf{b} \in \{0,1\} ^{D(D-1)}}
-             \textbf{b}^T 
-             (
-             \log(\textbf{R}) 
-             + m \times I_{D(D-1)}
-             + m_1 \times \textbf{M}_1
-             + m_2 \times \textbf{M}_2
-             )
-             \textbf{b} 
-            ''')
+    
+st.write("**Formulation finale**")
+st.latex(r'''
+        \argmin_{\textbf{b} \in \{0,1\} ^{D(D-1)}}
+            \textbf{b}^T 
+            (
+            \log(\textbf{R}) 
+            + m \times I_{D(D-1)}
+            + m_1 \times \textbf{M}_1
+            + m_2 \times \textbf{M}_2
+            )
+            \textbf{b} 
+        ''')
     # st.markdown("b : vecteur de variables binaires")
     # st.markdown("m : vecteur de poids des devises")
     # st.markdown("Q : matrice de coût")
