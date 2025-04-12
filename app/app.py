@@ -20,24 +20,8 @@ EDGE_STYLE = [
 # Add the project root to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-### ------------------- Read data ------------------- ###
-# Lecture des données
-prices_df = pd.read_csv("data/dataloader/prices_temporal.csv", index_col=0, header=0)
-q_df = pd.read_csv("data/problem/Q_2025-03-28 00:00:00+00:00.csv", index_col=0, header=0)
-with open("data/dataloader/list_currency.json", "r") as f:
-    list_currency = json.load(f)
-
 # Set page configuration
 st.set_page_config(page_title="Forex Arbitrage Detector", layout="wide")
-
-# ### ------------------- Sidebar ------------------- ###
-# with st.sidebar:
-#     st.title("Configuration")
-#     st.write("### Paramètres")
-#     list_currency = st.multiselect("Select Currencies", list_currency, default=list_currency)
-#     period = st.selectbox("Select Period", ["1d", "1wk", "1mo"])
-#     interval = st.selectbox("Select Interval", ["1m", "5m", "15m", "30m", "1h", "1d"])
-#     solver = st.selectbox("Select Solver", ["Simulated Bifurcation", "Quantum Annealing", "Gurobi Solver", "D-Wave Solver"])
 
 ### ------------------- Header ------------------- ###
 with st.sidebar:
@@ -50,16 +34,26 @@ with st.sidebar:
     st.divider()
     st.subheader('Calcul de la complexité')
     st.write("Le problème d'arbitrage sur le marché des changes est un problème NP-complet, ce qui signifie que le temps de calcul augmente exponentiellement avec le nombre de devises.")
-    d = st.number_input("Nombre de devise", 0, 10, 2)
+    d = st.number_input("Nombre de devise", 4, 8, 4)
     st.write(f"Nombre de pairs de devise : {d*(d-1)}")
     st.write(f"Nombre de possibilités de combinaison : {2**(d*(d-1)):,}")
     st.write()
+
+
+### ------------------- Read data ------------------- ###
+# Lecture des données
+
+prices_df = pd.read_csv(f"data/n_currency_{d}/dataloader/prices_temporal.csv", index_col=0, header=0)
+# q_df = pd.read_csv(f"data/n_currency_{d}/problem/Q_2025-03-28 00:00:00+00:00.csv", index_col=0, header=0)
+with open(f"data/n_currency_{d}/dataloader/list_currency.json", "r") as f:
+    list_currency = json.load(f)
+
 ### ------------------- Dataloader ------------------- ###
 # st.divider()
 st.write("### Acquisition des données")
 # st.write("On fait l'acquisition des données de prix des devises sur le marché des changes à partir de Yahoo Finance.")
 with st.expander("Configurations utilisé pour l'acquisition des données"):
-    with open("data/dataloader/config.json", "r") as f:
+    with open(f"data/n_currency_{d}/dataloader/config.json", "r") as f:
         config = json.load(f)
     st.write(config)
 
