@@ -76,7 +76,7 @@ with col1:
     st.caption('Remarque : Cliquer sur la colonne à gauche pour changer la date.')
 # Render the component
 with col2:
-    with open(f"data/figure/graph_{date_selection}.json", "r") as f:
+    with open(f"data/n_currency_{d}/figure/graph_{date_selection}.json", "r") as f:
         elements = json.load(f)
     st_link_analysis(elements, "cose", NODE_STYLE, EDGE_STYLE)
 ### ------------------- Problem formulation ------------------- ###
@@ -181,9 +181,9 @@ st.write("### Solution")
 
 tab1, tab2, tab3 = st.tabs(["Simulated Bifurcation (local)", "Gurobi Solver", "D-Wave Solver"])
 with tab1:
-    date_list = [date[3:-4] for date in os.listdir('data/solver/')]
+    date_list = [date[3:-4] for date in os.listdir(f'data/n_currency_{d}/solver/')]
     # sol_date = st.selectbox('Select Date', date_list, index=0)
-    sol = pd.read_csv(f"data/solver/sb_{date_selection}.csv", index_col=0, header=0)
+    sol = pd.read_csv(f"data/n_currency_{d}/solver/sb_{date_selection}.csv", index_col=0, header=0)
     sol.sort_values(by="coef", ascending=False, inplace=True)
     event = st.dataframe(sol, on_select="rerun", selection_mode="single-row")
     if event['selection']['rows'] == []:
