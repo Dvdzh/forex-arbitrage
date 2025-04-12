@@ -1,0 +1,221 @@
+{
+    "nodes": [
+        {
+            "data": {
+                "id": "EUR",
+                "label": "CURRENCY",
+                "name": "EUR"
+            }
+        },
+        {
+            "data": {
+                "id": "GBP",
+                "label": "CURRENCY",
+                "name": "GBP"
+            }
+        },
+        {
+            "data": {
+                "id": "CHF",
+                "label": "CURRENCY",
+                "name": "CHF"
+            }
+        },
+        {
+            "data": {
+                "id": "JPY",
+                "label": "CURRENCY",
+                "name": "JPY"
+            }
+        },
+        {
+            "data": {
+                "id": "USD",
+                "label": "CURRENCY",
+                "name": "USD"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "data": {
+                "id": "CHFEUR=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "EUR",
+                "rate": 1.045300006866455
+            }
+        },
+        {
+            "data": {
+                "id": "CHFGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "CHF",
+                "target": "GBP",
+                "rate": 0.8748000264167786
+            }
+        },
+        {
+            "data": {
+                "id": "CHFJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "JPY",
+                "rate": 169.61199951171875
+            }
+        },
+        {
+            "data": {
+                "id": "CHFUSD=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "USD",
+                "rate": 1.131861925125122
+            }
+        },
+        {
+            "data": {
+                "id": "EURCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "EUR",
+                "target": "CHF",
+                "rate": 0.9561700224876404
+            }
+        },
+        {
+            "data": {
+                "id": "EURGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "EUR",
+                "target": "GBP",
+                "rate": 0.8369500041007996
+            }
+        },
+        {
+            "data": {
+                "id": "EURJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "EUR",
+                "target": "JPY",
+                "rate": 162.1929931640625
+            }
+        },
+        {
+            "data": {
+                "id": "EURUSD=X",
+                "label": "PAIR_DIRECT",
+                "source": "EUR",
+                "target": "USD",
+                "rate": 1.082602620124817
+            }
+        },
+        {
+            "data": {
+                "id": "GBPCHF=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "CHF",
+                "rate": 1.1423499584197998
+            }
+        },
+        {
+            "data": {
+                "id": "GBPEUR=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "EUR",
+                "rate": 1.1946099996566772
+            }
+        },
+        {
+            "data": {
+                "id": "GBPJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "JPY",
+                "rate": 193.7779998779297
+            }
+        },
+        {
+            "data": {
+                "id": "GBPUSD=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "USD",
+                "rate": 1.2931424379348757
+            }
+        },
+        {
+            "data": {
+                "id": "JPYCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "CHF",
+                "rate": 0.0058949999511241
+            }
+        },
+        {
+            "data": {
+                "id": "JPYEUR=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "EUR",
+                "rate": 0.0061646997928619
+            }
+        },
+        {
+            "data": {
+                "id": "JPYGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "GBP",
+                "rate": 0.0051549999043345
+            }
+        },
+        {
+            "data": {
+                "id": "JPYUSD=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "USD",
+                "rate": 0.0066730286926031
+            }
+        },
+        {
+            "data": {
+                "id": "USDCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "USD",
+                "target": "CHF",
+                "rate": 0.8834999799728394
+            }
+        },
+        {
+            "data": {
+                "id": "USDEUR=X",
+                "label": "PAIR_INVERSE",
+                "source": "USD",
+                "target": "EUR",
+                "rate": 0.9236999750137328
+            }
+        },
+        {
+            "data": {
+                "id": "USDGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "USD",
+                "target": "GBP",
+                "rate": 0.7733100056648254
+            }
+        },
+        {
+            "data": {
+                "id": "USDJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "USD",
+                "target": "JPY",
+                "rate": 149.85699462890625
+            }
+        }
+    ]
+}
