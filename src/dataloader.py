@@ -19,7 +19,7 @@ class DataLoader():
         self.interval = None
         self.rate_df = None
 
-    def download_data(self, list_currency:List[str], period:str, interval:str) -> pd.DataFrame:
+    def download_data(self, list_currency:List[str], period:str, interval:str, verbose:bool=False) -> pd.DataFrame:
         """
         Télécharge les données des paires de devises depuis Yahoo Finance.
         
@@ -139,6 +139,12 @@ class DataLoader():
 
 if __name__ == "__main__":
 
+    # parser
+    import argparse
+    parser = argparse.ArgumentParser(description="DataLoader for currency data")
+    parser.add_argument("--n_currency", type=str, nargs="+", help="List of currencies to download", default=4)
+    n_currency = int(parser.parse_args().n_currency[0])
+
     # Get terminal width
     columns, _ = os.get_terminal_size()
 
@@ -150,9 +156,11 @@ if __name__ == "__main__":
     # 0. Create DataLoader object
     loader = DataLoader()
 
+    list_currency = ["USD", "EUR", "JPY", "CHF", "GBP", "AUD", "CAD", "NZD"]
+
     # 1. Download data
     config = {
-        "list_currency": ["USD", "EUR", "JPY", "CHF"],
+        "list_currency": list_currency[:n_currency],
         "period": "1d",
         "interval": "1m",
         "source": "yahooFinance",
@@ -184,13 +192,28 @@ if __name__ == "__main__":
     # # 4. Plot graph
     # fig = loader.plot_graph(price_last_df, show=True)
 
-    # 5. Saving    
-    with open("data/dataloader/list_currency.json", "w") as f:
+    # check if f"data/n_currency_{n_currency}" exists
+    if not os.path.exists(f"data/n_currency_{n_currency}"):
+        os.makedirs(f"data/n_currency_{n_currency}")
+    # check if f"data/n_currency/dataloader" exists
+    if not os.path.exists(f"data/n_currency_{n_currency}/dataloader"):
+        os.makedirs(f"data/n_currency_{n_currency}/dataloader")
+
+    with open(f"data/n_currency_{n_currency}/dataloader/list_currency.json", "w") as f:
         json.dump(loader.list_currency, f, indent=4)
-    with open("data/dataloader/tickers.json", "w") as f:
+    with open(f"data/n_currency_{n_currency}/dataloader/tickers.json", "w") as f:
         json.dump(loader.tickers, f, indent=4)
-    with open("data/dataloader/config.json", "w") as f:
+    with open(f"data/n_currency_{n_currency}/dataloader/config.json", "w") as f:
         json.dump(config, f, indent=4)
-    price_temporal_df.iloc[:10].to_csv("data/dataloader/prices_temporal.csv", index=True, header=True)
-    # price_series.to_csv("data/dataloader/prices_series.csv", index=True, header=True)
+    price_temporal_df.iloc[:20].to_csv(f"data/n_currency_{n_currency}/dataloader/prices_temporal.csv", index=True, header=True)
+
+    # # 5. Saving    
+    # with open("data/dataloader/list_currency.json", "w") as f:
+    #     json.dump(loader.list_currency, f, indent=4)
+    # with open("data/dataloader/tickers.json", "w") as f:
+    #     json.dump(loader.tickers, f, indent=4)
+    # with open("data/dataloader/config.json", "w") as f:
+    #     json.dump(config, f, indent=4)
+    # price_temporal_df.iloc[:20].to_csv("data/dataloader/prices_temporal.csv", index=True, header=True)
+    # # price_series.to_csv("data/dataloader/prices_series.csv", index=True, header=True)
     

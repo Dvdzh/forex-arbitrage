@@ -52,6 +52,11 @@ class QUBOProblem():
     
 if __name__ == "__main__":
 
+    import argparse
+    parser = argparse.ArgumentParser(description="DataLoader for currency data")
+    parser.add_argument("--n_currency", type=str, nargs="+", help="List of currencies to download", default=4)
+    n_currency = int(parser.parse_args().n_currency[0])
+    
     # Get terminal width
     columns, _ = os.get_terminal_size()
 
@@ -68,6 +73,7 @@ if __name__ == "__main__":
     constraint_diag = 5
     constraint_M1 = 1
     constraint_M2 = 1
+
     for date in price_df.index:
         print(f"\n- Date: {date}")
 
@@ -77,9 +83,9 @@ if __name__ == "__main__":
 
         # 2. Save results
         Q.to_csv(f"data/problem/Q_{date}.csv", header=True, index=True)
-        qubo.R.to_csv(f"data/problem/R_{date}.csv", header=True, index=True)
-        qubo.M1.to_csv(f"data/problem/M1_{date}.csv", header= True, index=True)
-        qubo.M2.to_csv(f"data/problem/M2_{date}.csv", header= True, index=True)
+        # qubo.R.to_csv(f"data/problem/R_{date}.csv", header=True, index=True)
+        # qubo.M1.to_csv(f"data/problem/M1_{date}.csv", header= True, index=True)
+        # qubo.M2.to_csv(f"data/problem/M2_{date}.csv", header= True, index=True)
         print("- Formulation shape:")
         print(f"  - Q : {Q.shape}")
         print(f"  - R : {qubo.R.shape}")
