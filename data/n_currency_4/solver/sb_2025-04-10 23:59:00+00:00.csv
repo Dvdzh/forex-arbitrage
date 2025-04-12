@@ -1,0 +1,2 @@
+,paths,value,coef
+0,"['CHFEUR=X', 'CHFUSD=X', 'EURCHF=X', 'EURJPY=X', 'JPYCHF=X', 'JPYUSD=X', 'USDEUR=X', 'USDJPY=X']",tensor(8.0022),0.9977636739181769
