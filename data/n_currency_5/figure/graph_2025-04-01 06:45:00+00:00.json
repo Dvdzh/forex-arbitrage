@@ -2,16 +2,16 @@
     "nodes": [
         {
             "data": {
-                "id": "EUR",
+                "id": "GBP",
                 "label": "CURRENCY",
-                "name": "EUR"
+                "name": "GBP"
             }
         },
         {
             "data": {
-                "id": "GBP",
+                "id": "JPY",
                 "label": "CURRENCY",
-                "name": "GBP"
+                "name": "JPY"
             }
         },
         {
@@ -23,9 +23,9 @@
         },
         {
             "data": {
-                "id": "JPY",
+                "id": "EUR",
                 "label": "CURRENCY",
-                "name": "JPY"
+                "name": "EUR"
             }
         },
         {

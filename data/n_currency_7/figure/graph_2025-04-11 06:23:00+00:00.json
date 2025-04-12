@@ -2,16 +2,9 @@
     "nodes": [
         {
             "data": {
-                "id": "CAD",
+                "id": "AUD",
                 "label": "CURRENCY",
-                "name": "CAD"
-            }
-        },
-        {
-            "data": {
-                "id": "CHF",
-                "label": "CURRENCY",
-                "name": "CHF"
+                "name": "AUD"
             }
         },
         {
@@ -23,6 +16,20 @@
         },
         {
             "data": {
+                "id": "EUR",
+                "label": "CURRENCY",
+                "name": "EUR"
+            }
+        },
+        {
+            "data": {
+                "id": "CHF",
+                "label": "CURRENCY",
+                "name": "CHF"
+            }
+        },
+        {
+            "data": {
                 "id": "GBP",
                 "label": "CURRENCY",
                 "name": "GBP"
@@ -30,23 +37,16 @@
         },
         {
             "data": {
+                "id": "CAD",
+                "label": "CURRENCY",
+                "name": "CAD"
+            }
+        },
+        {
+            "data": {
                 "id": "USD",
                 "label": "CURRENCY",
                 "name": "USD"
-            }
-        },
-        {
-            "data": {
-                "id": "AUD",
-                "label": "CURRENCY",
-                "name": "AUD"
-            }
-        },
-        {
-            "data": {
-                "id": "EUR",
-                "label": "CURRENCY",
-                "name": "EUR"
             }
         }
     ],
@@ -273,7 +273,7 @@
                 "label": "PAIR_DIRECT",
                 "source": "GBP",
                 "target": "AUD",
-                "rate": 2.0951099395751958
+                "rate": 2.0951099395751953
             }
         },
         {

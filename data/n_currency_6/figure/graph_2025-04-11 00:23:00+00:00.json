@@ -2,6 +2,13 @@
     "nodes": [
         {
             "data": {
+                "id": "USD",
+                "label": "CURRENCY",
+                "name": "USD"
+            }
+        },
+        {
+            "data": {
                 "id": "GBP",
                 "label": "CURRENCY",
                 "name": "GBP"
@@ -9,23 +16,9 @@
         },
         {
             "data": {
-                "id": "AUD",
+                "id": "JPY",
                 "label": "CURRENCY",
-                "name": "AUD"
-            }
-        },
-        {
-            "data": {
-                "id": "CHF",
-                "label": "CURRENCY",
-                "name": "CHF"
-            }
-        },
-        {
-            "data": {
-                "id": "USD",
-                "label": "CURRENCY",
-                "name": "USD"
+                "name": "JPY"
             }
         },
         {
@@ -37,9 +30,16 @@
         },
         {
             "data": {
-                "id": "JPY",
+                "id": "CHF",
                 "label": "CURRENCY",
-                "name": "JPY"
+                "name": "CHF"
+            }
+        },
+        {
+            "data": {
+                "id": "AUD",
+                "label": "CURRENCY",
+                "name": "AUD"
             }
         }
     ],
