@@ -17,3 +17,6 @@ torch
 
 bellmanford
 st-link-analysis
+
+gurobipy
+gurobi_optimods
