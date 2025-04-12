@@ -1,0 +1,566 @@
+{
+    "nodes": [
+        {
+            "data": {
+                "id": "GBP",
+                "label": "CURRENCY",
+                "name": "GBP"
+            }
+        },
+        {
+            "data": {
+                "id": "EUR",
+                "label": "CURRENCY",
+                "name": "EUR"
+            }
+        },
+        {
+            "data": {
+                "id": "CHF",
+                "label": "CURRENCY",
+                "name": "CHF"
+            }
+        },
+        {
+            "data": {
+                "id": "JPY",
+                "label": "CURRENCY",
+                "name": "JPY"
+            }
+        },
+        {
+            "data": {
+                "id": "AUD",
+                "label": "CURRENCY",
+                "name": "AUD"
+            }
+        },
+        {
+            "data": {
+                "id": "USD",
+                "label": "CURRENCY",
+                "name": "USD"
+            }
+        },
+        {
+            "data": {
+                "id": "CAD",
+                "label": "CURRENCY",
+                "name": "CAD"
+            }
+        },
+        {
+            "data": {
+                "id": "NZD",
+                "label": "CURRENCY",
+                "name": "NZD"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "data": {
+                "id": "AUDCAD=X",
+                "label": "PAIR_INVERSE",
+                "source": "AUD",
+                "target": "CAD",
+                "rate": 0.8689900040626526
+            }
+        },
+        {
+            "data": {
+                "id": "AUDCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "AUD",
+                "target": "CHF",
+                "rate": 0.5119699835777283
+            }
+        },
+        {
+            "data": {
+                "id": "AUDEUR=X",
+                "label": "PAIR_INVERSE",
+                "source": "AUD",
+                "target": "EUR",
+                "rate": 0.5518900156021118
+            }
+        },
+        {
+            "data": {
+                "id": "AUDGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "AUD",
+                "target": "GBP",
+                "rate": 0.4792400002479553
+            }
+        },
+        {
+            "data": {
+                "id": "AUDJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "AUD",
+                "target": "JPY",
+                "rate": 89.56300354003906
+            }
+        },
+        {
+            "data": {
+                "id": "AUDNZD=X",
+                "label": "PAIR_DIRECT",
+                "source": "AUD",
+                "target": "NZD",
+                "rate": 1.0792100429534912
+            }
+        },
+        {
+            "data": {
+                "id": "AUDUSD=X",
+                "label": "PAIR_INVERSE",
+                "source": "AUD",
+                "target": "USD",
+                "rate": 0.6238069534301758
+            }
+        },
+        {
+            "data": {
+                "id": "CADAUD=X",
+                "label": "PAIR_DIRECT",
+                "source": "CAD",
+                "target": "AUD",
+                "rate": 1.1502000093460083
+            }
+        },
+        {
+            "data": {
+                "id": "CADCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "CAD",
+                "target": "CHF",
+                "rate": 0.589139997959137
+            }
+        },
+        {
+            "data": {
+                "id": "CADEUR=X",
+                "label": "PAIR_INVERSE",
+                "source": "CAD",
+                "target": "EUR",
+                "rate": 0.6351000070571899
+            }
+        },
+        {
+            "data": {
+                "id": "CADGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "CAD",
+                "target": "GBP",
+                "rate": 0.5511999726295471
+            }
+        },
+        {
+            "data": {
+                "id": "CADJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "CAD",
+                "target": "JPY",
+                "rate": 103.05500030517578
+            }
+        },
+        {
+            "data": {
+                "id": "CADNZD=X",
+                "label": "PAIR_DIRECT",
+                "source": "CAD",
+                "target": "NZD",
+                "rate": 1.2409000396728516
+            }
+        },
+        {
+            "data": {
+                "id": "CADUSD=X",
+                "label": "PAIR_INVERSE",
+                "source": "CAD",
+                "target": "USD",
+                "rate": 0.7176690101623535
+            }
+        },
+        {
+            "data": {
+                "id": "CHFAUD=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "AUD",
+                "rate": 1.9514100551605225
+            }
+        },
+        {
+            "data": {
+                "id": "CHFCAD=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "CAD",
+                "rate": 1.6964000463485718
+            }
+        },
+        {
+            "data": {
+                "id": "CHFEUR=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "EUR",
+                "rate": 1.0779000520706177
+            }
+        },
+        {
+            "data": {
+                "id": "CHFGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "CHF",
+                "target": "GBP",
+                "rate": 0.9359999895095824
+            }
+        },
+        {
+            "data": {
+                "id": "CHFJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "JPY",
+                "rate": 174.89700317382812
+            }
+        },
+        {
+            "data": {
+                "id": "CHFNZD=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "NZD",
+                "rate": 2.1080000400543213
+            }
+        },
+        {
+            "data": {
+                "id": "CHFUSD=X",
+                "label": "PAIR_DIRECT",
+                "source": "CHF",
+                "target": "USD",
+                "rate": 1.217893362045288
+            }
+        },
+        {
+            "data": {
+                "id": "EURAUD=X",
+                "label": "PAIR_DIRECT",
+                "source": "EUR",
+                "target": "AUD",
+                "rate": 1.8108799457550049
+            }
+        },
+        {
+            "data": {
+                "id": "EURCAD=X",
+                "label": "PAIR_DIRECT",
+                "source": "EUR",
+                "target": "CAD",
+                "rate": 1.57368004322052
+            }
+        },
+        {
+            "data": {
+                "id": "EURCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "EUR",
+                "target": "CHF",
+                "rate": 0.9272400140762328
+            }
+        },
+        {
+            "data": {
+                "id": "EURGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "EUR",
+                "target": "GBP",
+                "rate": 0.868369996547699
+            }
+        },
+        {
+            "data": {
+                "id": "EURJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "EUR",
+                "target": "JPY",
+                "rate": 162.1959991455078
+            }
+        },
+        {
+            "data": {
+                "id": "EURNZD=X",
+                "label": "PAIR_DIRECT",
+                "source": "EUR",
+                "target": "NZD",
+                "rate": 1.954360008239746
+            }
+        },
+        {
+            "data": {
+                "id": "EURUSD=X",
+                "label": "PAIR_DIRECT",
+                "source": "EUR",
+                "target": "USD",
+                "rate": 1.1295605897903442
+            }
+        },
+        {
+            "data": {
+                "id": "GBPAUD=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "AUD",
+                "rate": 2.0851199626922607
+            }
+        },
+        {
+            "data": {
+                "id": "GBPCAD=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "CAD",
+                "rate": 1.8121299743652344
+            }
+        },
+        {
+            "data": {
+                "id": "GBPCHF=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "CHF",
+                "rate": 1.067739963531494
+            }
+        },
+        {
+            "data": {
+                "id": "GBPEUR=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "EUR",
+                "rate": 1.151350021362305
+            }
+        },
+        {
+            "data": {
+                "id": "GBPJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "JPY",
+                "rate": 186.77099609375
+            }
+        },
+        {
+            "data": {
+                "id": "GBPNZD=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "NZD",
+                "rate": 2.2506799697875977
+            }
+        },
+        {
+            "data": {
+                "id": "GBPUSD=X",
+                "label": "PAIR_DIRECT",
+                "source": "GBP",
+                "target": "USD",
+                "rate": 1.300390124320984
+            }
+        },
+        {
+            "data": {
+                "id": "JPYAUD=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "AUD",
+                "rate": 0.0111640002578496
+            }
+        },
+        {
+            "data": {
+                "id": "JPYCAD=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "CAD",
+                "rate": 0.0097009995952248
+            }
+        },
+        {
+            "data": {
+                "id": "JPYCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "CHF",
+                "rate": 0.0057130004279315
+            }
+        },
+        {
+            "data": {
+                "id": "JPYEUR=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "EUR",
+                "rate": 0.0061659999191761
+            }
+        },
+        {
+            "data": {
+                "id": "JPYGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "GBP",
+                "rate": 0.0053500002250075
+            }
+        },
+        {
+            "data": {
+                "id": "JPYNZD=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "NZD",
+                "rate": 0.0120540000498294
+            }
+        },
+        {
+            "data": {
+                "id": "JPYUSD=X",
+                "label": "PAIR_INVERSE",
+                "source": "JPY",
+                "target": "USD",
+                "rate": 0.0069625275209546
+            }
+        },
+        {
+            "data": {
+                "id": "NZDAUD=X",
+                "label": "PAIR_INVERSE",
+                "source": "NZD",
+                "target": "AUD",
+                "rate": 0.9259999990463256
+            }
+        },
+        {
+            "data": {
+                "id": "NZDCAD=X",
+                "label": "PAIR_INVERSE",
+                "source": "NZD",
+                "target": "CAD",
+                "rate": 0.8049499988555908
+            }
+        },
+        {
+            "data": {
+                "id": "NZDCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "NZD",
+                "target": "CHF",
+                "rate": 0.4742400050163269
+            }
+        },
+        {
+            "data": {
+                "id": "NZDEUR=X",
+                "label": "PAIR_INVERSE",
+                "source": "NZD",
+                "target": "EUR",
+                "rate": 0.5103099942207336
+            }
+        },
+        {
+            "data": {
+                "id": "NZDGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "NZD",
+                "target": "GBP",
+                "rate": 0.4440500140190124
+            }
+        },
+        {
+            "data": {
+                "id": "NZDJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "NZD",
+                "target": "JPY",
+                "rate": 82.96800231933594
+            }
+        },
+        {
+            "data": {
+                "id": "NZDUSD=X",
+                "label": "PAIR_INVERSE",
+                "source": "NZD",
+                "target": "USD",
+                "rate": 0.577734112739563
+            }
+        },
+        {
+            "data": {
+                "id": "USDAUD=X",
+                "label": "PAIR_DIRECT",
+                "source": "USD",
+                "target": "AUD",
+                "rate": 1.603060007095337
+            }
+        },
+        {
+            "data": {
+                "id": "USDCAD=X",
+                "label": "PAIR_DIRECT",
+                "source": "USD",
+                "target": "CAD",
+                "rate": 1.393399953842163
+            }
+        },
+        {
+            "data": {
+                "id": "USDCHF=X",
+                "label": "PAIR_INVERSE",
+                "source": "USD",
+                "target": "CHF",
+                "rate": 0.8210899829864502
+            }
+        },
+        {
+            "data": {
+                "id": "USDEUR=X",
+                "label": "PAIR_INVERSE",
+                "source": "USD",
+                "target": "EUR",
+                "rate": 0.8852999806404114
+            }
+        },
+        {
+            "data": {
+                "id": "USDGBP=X",
+                "label": "PAIR_INVERSE",
+                "source": "USD",
+                "target": "GBP",
+                "rate": 0.7689999938011169
+            }
+        },
+        {
+            "data": {
+                "id": "USDJPY=X",
+                "label": "PAIR_DIRECT",
+                "source": "USD",
+                "target": "JPY",
+                "rate": 143.62600708007812
+            }
+        },
+        {
+            "data": {
+                "id": "USDNZD=X",
+                "label": "PAIR_DIRECT",
+                "source": "USD",
+                "target": "NZD",
+                "rate": 1.7309000492095947
+            }
+        }
+    ]
+}

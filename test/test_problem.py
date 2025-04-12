@@ -14,6 +14,28 @@ if __name__ == "__main__":
     parser.add_argument("-n", type=str, nargs="+", help="List of currencies to download", default=4)
     n_currency = int(parser.parse_args().n[0])
     
+    config = dict(
+        n4=dict(
+            constraint_diag=5,
+            constraint_M1=1,
+            constraint_M2=1,
+        ),
+        n5=dict(
+            constraint_diag=5.45,
+            constraint_M1=1,
+            constraint_M2=1,
+        ),
+        n6=dict(
+            constraint_diag=5,
+            constraint_M1=1,
+            constraint_M2=1,
+        ),
+        n7=dict(
+            constraint_diag=5,
+            constraint_M1=1,
+            constraint_M2=1,
+        ),
+    )
     # TODO : move this into an utils file
     # Get terminal width
     columns, _ = os.get_terminal_size()
@@ -27,10 +49,11 @@ if __name__ == "__main__":
     # price_series = pd.read_csv("data/dataloader/prices_series.csv", index_col=0, header=0)
     price_df = pd.read_csv(f"data/n_currency_{n_currency}/dataloader/prices_temporal.csv", index_col=0, header=0)
 
+
     qubo = QUBOProblem()
-    constraint_diag = 5
-    constraint_M1 = 1
-    constraint_M2 = 1
+    constraint_diag = config[f"n{n_currency}"]["constraint_diag"]
+    constraint_M1 = config[f"n{n_currency}"]["constraint_M1"]
+    constraint_M2 = config[f"n{n_currency}"]["constraint_M2"]
 
     # TODO : refactorer le code pour ne avoir que a envoyer un price_df 
     # Et tout placer dans une fonction 
