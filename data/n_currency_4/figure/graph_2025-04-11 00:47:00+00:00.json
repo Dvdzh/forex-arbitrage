@@ -2,16 +2,16 @@
     "nodes": [
         {
             "data": {
-                "id": "JPY",
+                "id": "USD",
                 "label": "CURRENCY",
-                "name": "JPY"
+                "name": "USD"
             }
         },
         {
             "data": {
-                "id": "USD",
+                "id": "CHF",
                 "label": "CURRENCY",
-                "name": "USD"
+                "name": "CHF"
             }
         },
         {
@@ -23,9 +23,9 @@
         },
         {
             "data": {
-                "id": "CHF",
+                "id": "JPY",
                 "label": "CURRENCY",
-                "name": "CHF"
+                "name": "JPY"
             }
         }
     ],

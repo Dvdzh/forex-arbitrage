@@ -2,9 +2,23 @@
     "nodes": [
         {
             "data": {
+                "id": "AUD",
+                "label": "CURRENCY",
+                "name": "AUD"
+            }
+        },
+        {
+            "data": {
                 "id": "USD",
                 "label": "CURRENCY",
                 "name": "USD"
+            }
+        },
+        {
+            "data": {
+                "id": "CHF",
+                "label": "CURRENCY",
+                "name": "CHF"
             }
         },
         {
@@ -26,20 +40,6 @@
                 "id": "EUR",
                 "label": "CURRENCY",
                 "name": "EUR"
-            }
-        },
-        {
-            "data": {
-                "id": "CHF",
-                "label": "CURRENCY",
-                "name": "CHF"
-            }
-        },
-        {
-            "data": {
-                "id": "AUD",
-                "label": "CURRENCY",
-                "name": "AUD"
             }
         }
     ],

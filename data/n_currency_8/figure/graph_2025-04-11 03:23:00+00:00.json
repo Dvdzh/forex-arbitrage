@@ -2,16 +2,23 @@
     "nodes": [
         {
             "data": {
-                "id": "GBP",
+                "id": "NZD",
                 "label": "CURRENCY",
-                "name": "GBP"
+                "name": "NZD"
             }
         },
         {
             "data": {
-                "id": "EUR",
+                "id": "AUD",
                 "label": "CURRENCY",
-                "name": "EUR"
+                "name": "AUD"
+            }
+        },
+        {
+            "data": {
+                "id": "GBP",
+                "label": "CURRENCY",
+                "name": "GBP"
             }
         },
         {
@@ -30,13 +37,6 @@
         },
         {
             "data": {
-                "id": "AUD",
-                "label": "CURRENCY",
-                "name": "AUD"
-            }
-        },
-        {
-            "data": {
                 "id": "USD",
                 "label": "CURRENCY",
                 "name": "USD"
@@ -44,16 +44,16 @@
         },
         {
             "data": {
-                "id": "CAD",
+                "id": "EUR",
                 "label": "CURRENCY",
-                "name": "CAD"
+                "name": "EUR"
             }
         },
         {
             "data": {
-                "id": "NZD",
+                "id": "CAD",
                 "label": "CURRENCY",
-                "name": "NZD"
+                "name": "CAD"
             }
         }
     ],

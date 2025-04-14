@@ -21,7 +21,7 @@ if __name__ == "__main__":
             constraint_M2=1,
         ),
         n5=dict(
-            constraint_diag=5.45,
+            constraint_diag=3.4,
             constraint_M1=1,
             constraint_M2=1,
         ),

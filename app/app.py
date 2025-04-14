@@ -141,7 +141,7 @@ st.latex(r'''
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    constraint_diag = st.slider("Constrainte diagonale", min_value=0., max_value=10., step=0.1, value=5.)
+    constraint_diag = st.slider("Constrainte diagonale m", min_value=0., max_value=10., step=0.1, value=5.)
 with col2:
     constraint_M1 = st.slider("Contrainte M1", min_value=0., max_value=1., step=0.1)
 with col3:
@@ -152,6 +152,7 @@ qubo = problem.QUBOProblem()
 qubo.get_Q(prices_df.loc[date_selection], constraint_M1=constraint_M1, constraint_M2=constraint_M2, constraint_diag=constraint_diag)
 st.dataframe(qubo.Q)
 
+st.caption("Remarque : L'outil ci-dessus permet de visualiser la matrice Q mais ne modifie pas les valeurs de la matrice utilisé pour la résolution du problème en partie Solution.")
 # import plotly.graph_objects as go
 
 # fig = go.Figure()

@@ -9,6 +9,13 @@
         },
         {
             "data": {
+                "id": "EUR",
+                "label": "CURRENCY",
+                "name": "EUR"
+            }
+        },
+        {
+            "data": {
                 "id": "JPY",
                 "label": "CURRENCY",
                 "name": "JPY"
@@ -19,13 +26,6 @@
                 "id": "CHF",
                 "label": "CURRENCY",
                 "name": "CHF"
-            }
-        },
-        {
-            "data": {
-                "id": "EUR",
-                "label": "CURRENCY",
-                "name": "EUR"
             }
         },
         {
