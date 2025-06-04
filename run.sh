@@ -2,9 +2,10 @@
 # python3 src/problem.py
 # python3 src/solver.py
 
-for n in {4..8}
+# for n in {4..8}
+for n in {6..6}
 do
-    python3 src/dataloader.py -n $n
+    # python3 test/test_dataloader.py -n $n
     python3 test/test_problem.py -n $n
     python3 test/test_solver.py -n $n
     python3 test/test_figure.py -n $n
