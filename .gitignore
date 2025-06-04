@@ -69,3 +69,6 @@ logs/
 *.log
 
 .DS_Store
+.python-version
+uv.lock
+Makefile

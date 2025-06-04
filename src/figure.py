@@ -112,7 +112,7 @@ if __name__ == "__main__":
                         "label": "PAIR_DIRECT" if series.loc[pair] > 1 else "PAIR_INVERSE",
                         "source": pair[:3],
                         "target": pair[3:6], 
-                        "rate":series.loc[pair]}} for pair in pairs]
-        
+                        "rate":f"{series.loc[pair]:03d}"}} for pair in pairs]
+
         with open(f"data/n_currency_{n_currency}/figure/graph_{date}.json", "w") as f:
             json.dump({"nodes": nodes, "edges": edges}, f, indent=4)
